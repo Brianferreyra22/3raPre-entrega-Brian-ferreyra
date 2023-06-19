@@ -1,65 +1,18 @@
 @import"../Utilidades/variables";
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
 
-body {
-  background-color: $Color-Principal;
-}
-
-header img {
-  margin: 20px;
-}
-
-.navegacion {
+main{
+   h1 {
   text-align: center;
-  color: $Color-letras;
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      display: inline-block;
-
-      a:hover {
-        display: flex;
-        padding: 5px;
-        text-decoration: none;
-        color: $Color-letras;
-        border-radius: 10px;
-        justify-content: space-between;
-        background: #4f4f4f;
-        transform: scale(1.2);
-      }
-    }
-  }
-}
-
-.navegacion ul li a {
   color: $Color-letras;
 }
 
 .img {
   display: flex;
   justify-content: center;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: auto; /* Cambio "height: 100%;" a "height: auto;" */
   object-fit: cover;
 }
-
-main h1 {
-  text-align: center;
-  color: $Color-letras;
 }
 
-footer {
-  color: $Color-letras;
-  text-align: center;
-  margin-top: 1rem;
-}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Reset*/
 * {
   margin: 0;
@@ -17,12 +18,12 @@ header img {
   margin: 20px; }
 
 .navegacion {
-  text-align: center;
-  color: Whitesmoke; }
+  text-align: center; }
   .navegacion ul {
     list-style: none;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    color: Whitesmoke; }
     .navegacion ul li {
       display: inline-block; }
       .navegacion ul li a:hover {
@@ -35,123 +36,101 @@ header img {
         background: #4f4f4f;
         transform: scale(1.2); }
 
-.navegacion ul li a {
-  color: Whitesmoke; }
-
-.img {
-  display: flex;
-  justify-content: center;
-  width: auto;
-  height: auto;
-  object-fit: cover; }
-
 main h1 {
   text-align: center;
   color: Whitesmoke; }
 
-footer {
-  color: Whitesmoke;
-  text-align: center;
-  margin-top: 1rem; }
+main .img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  /* Cambio "height: 100%;" a "height: auto;" */
+  object-fit: cover; }
 
-.formulario {
+main .formulario {
   text-align: center;
   background-color: black;
   color: whitesmoke;
   font-size: x-large; }
-
-.formulario div input {
-  text-align: center;
-  background-color: whitesmoke; }
+  main .formulario fieldset div label input {
+    text-align: center;
+    background-color: whitesmoke; }
 
 .main {
   height: auto;
   width: auto;
   margin: 0px;
   padding: 50px; }
-
-.main div {
-  height: 800px;
-  text-align: left;
-  color: whitesmoke;
-  font-size: 50 PX;
-  background-image: url("/IMG/WhatsApp Image 2023-04-22 at 10.23.55 PM.jpeg");
-  background-size: cover; }
-
-.contenido {
-  width: 100%;
-  margin: 0px;
-  padding: 5px; }
-
-.contenedor-max {
-  margin: 20px;
-  max-width: 500px;
-  padding: 5px;
-  align-items: center;
-  font-size: large; }
-
-.main div h2 {
-  text-align: center;
-  color: whitesmoke; }
-
-.soundcloud, .Beat {
-  display: none; }
+  .main div.contenido {
+    height: 800px;
+    text-align: left;
+    color: whitesmoke;
+    font-size: 50 PX;
+    background-image: url("/IMG/WhatsApp Image 2023-04-22 at 10.23.55 PM.jpeg");
+    background-size: cover;
+    width: 100%;
+    margin: 0px;
+    padding: 5px; }
+    .main div.contenido .contenedor-max {
+      margin: 20px;
+      max-width: 500px;
+      padding: 5px;
+      align-items: center;
+      font-size: large;
+      text-align: center;
+      color: whitesmoke; }
+    .main div.contenido h2 {
+      text-align: center;
+      color: whitesmoke; }
 
 .videos {
-  image-resolution: 25px; }
-
-.videos h1 {
-  background-color: black;
-  color: whitesmoke; }
-
-.Videos div .spotify, .youtube {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; }
-
-.Videos {
-  height: 40vh;
-  margin: 1rem 3rem 50rem 3rem;
+  image-resolution: 25px;
+  height: auto;
+  /* Cambio "height: 40vh;" a "height: auto;" */
+  margin: 1rem 3rem 2rem 3rem;
+  /* Ajusto el valor del margen inferior según sea necesario */
   display: grid;
   grid-template-columns: 3fr;
-  grid-template-rows: repeat(3, 60%);
+  grid-template-rows: repeat(3, auto);
+  /* Cambio "grid-template-rows: repeat(3, 60%);" a "grid-template-rows: repeat(3, auto);" */
   row-gap: 1rem; }
+  .videos h1 {
+    background-color: black;
+    color: whitesmoke; }
+  .videos div .spotify,
+  .videos .youtube {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
 
 /*Estilos para tablet*/
 /*mq de tablet*/
 /*Estilos para PC-Desktop*/
 /*mq de Desktop*/
 @media screen and (min-width: 600px) {
-  .main .images {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 1rem; }
-  .main .contenedor .img-4 {
-    grid-column: span 2; } }
+  .main .contenedor {
+    grid-column: span 2; }
+    .main .contenedor .images {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 1rem; }
+      .main .contenedor .images .img-4 {
+        grid-column: span; } }
 
 @media screen and (min-width: 1024px) {
   .main .contenedor .img-2,
   .main .contenedor .img-4 {
     display: block; }
-  .main .images {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 1.5rem; }
+  .main .contenedor .img-4 {
+    grid-column: span 1; }
   .main .contenedor .img-1,
   .main .contenedor .img-3 {
     grid-row: span 2; }
-  .main .contenedor .img-4 {
-    grid-column: span 1; } }
-
-@media screen and (min-width: 1200px) {
-  .main .images {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr); } }
-
-.images div img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; }
+  .main .contenedor .images {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 1.5rem; } }
 
 .images {
   height: 60vh;
@@ -160,45 +139,68 @@ footer {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   row-gap: 1.5rem; }
-
-.images div {
-  position: relative;
-  z-index: 1; }
-
-.contenedor .img-2,
-.contenedor .img-4,
-.contenedor .img-5 {
-  display: none; }
-
-.contenedor .img-2 {
-  grid-column: span 2; }
+  @media screen and (min-width: 600px) {
+    .images .contenedor {
+      grid-column: span 2; }
+      .images .contenedor .images {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 1rem; }
+        .images .contenedor .images .img-4 {
+          grid-column: span; } }
+  @media screen and (min-width: 1024px) {
+    .images .contenedor .img-2,
+    .images .contenedor .img-4 {
+      display: block; }
+    .images .contenedor .img-4 {
+      grid-column: span 1; }
+    .images .contenedor .img-1,
+    .images .contenedor .img-3 {
+      grid-row: span 2; }
+    .images .contenedor .images {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: 1.5rem; } }
+  .images div {
+    position: relative;
+    z-index: 1; }
+    .images div img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .images .img-2 {
+    grid-column: span 2; }
+  .images .img-2,
+  .images .img-4,
+  .images .img-5 {
+    display: none; }
 
 @media screen and (min-width: 600px) {
-  .contenedor .images .images {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 1rem; }
-  .contenedor .images .contenedor .img-4 {
-    grid-column: span 2; } }
+  .contenedor .images .contenedor {
+    grid-column: span 2; }
+    .contenedor .images .contenedor .images {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 1rem; }
+      .contenedor .images .contenedor .images .img-4 {
+        grid-column: span; } }
 
 @media screen and (min-width: 1024px) {
   .contenedor .images .contenedor .img-2,
   .contenedor .images .contenedor .img-4 {
     display: block; }
-  .contenedor .images .images {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 1.5rem; }
+  .contenedor .images .contenedor .img-4 {
+    grid-column: span 1; }
   .contenedor .images .contenedor .img-1,
   .contenedor .images .contenedor .img-3 {
     grid-row: span 2; }
-  .contenedor .images .contenedor .img-4 {
-    grid-column: span 1; } }
-
-@media screen and (min-width: 1200px) {
-  .contenedor .images .images {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr); } }
+  .contenedor .images .contenedor .images {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 1.5rem; } }
 
 footer {
+  color: Whitesmoke;
+  text-align: center;
+  margin-top: 1rem;
   position: relative; }
